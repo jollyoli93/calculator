@@ -14,3 +14,10 @@ const divide = function(a, b){
     return a / b;
 };
 
+let numOne = 1;
+let numTwo = 2;
+let operator = '+';
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button)=> button.addEventListener('click') )

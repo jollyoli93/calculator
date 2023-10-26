@@ -1,6 +1,6 @@
 html, body {
     background-color: aliceblue;
-    min-height: 100%;
+    max-height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -15,44 +15,76 @@ h1 {
 }
 
 h2 {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    padding-top: 10%;
+    padding-bottom: 10%;
     text-align: center;
 }
 
 .container {
-    border: 1px black solid;
+    border: 2px black solid;
+    background-color: rgb(58, 58, 58);
     border-radius: 10px;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     justify-content: centre;
-    min-width: 150px;
-    min-height: 250px;
+    min-width: 250px;
+    height: 500px;
 }
 
 .screen {
-    border: 1px red solid;
+   
+    background-color: grey;
+    min-height: 100px;
     border-radius: 10px;
     margin: 10px 10px 5px 10px;
     flex: 1;
 }
 
-.button-container {
+.operators-container {
     margin: 5px 10px 10px 10px;
     display: flex;
     flex-wrap: wrap;
-    flex: 5;
+    flex: 2;
     gap: 10PX;
 }
 
 .button {
+    background-color: rgb(189, 187, 185);
     text-align: center;
-    margin: 5px;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    border: 1px solid blue;
+    margin: 4px;
+    padding-top: 5%;
+    padding-bottom: 5%;
     border-radius: 10px;
     min-width: 25%;
     flex: 1 1 auto;
 
+}
+
+#clear {
+    background-color: rgb(207, 116, 116);
+    order: 3;
+}
+
+#equals {
+    background-color: rgb(167, 149, 149);
+    order: 2;
+}
+
+.numbers-container {
+    background-color: rgb(58, 58, 58);
+    margin: 5px 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
+    gap: PX;
+}
+
+#num0, #num1, #num2, #num3, #num4, #num5, #num6, #num7, #num8, #num9 {
+    background-color: aqua;
+
+}
+
+#num0 {
+    order:2
 }
