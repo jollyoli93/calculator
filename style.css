@@ -41,12 +41,27 @@ h2 {
     flex: 1;
 }
 
-.operators-container {
+
+.numbers-container {
+    background-color: rgb(58, 58, 58);
     margin: 5px 10px 10px 10px;
     display: flex;
     flex-wrap: wrap;
-    flex: 2;
-    gap: 10PX;
+    flex: 3;
+}
+
+.operators-container {
+    margin: 5px 10px 10px 10px;
+    display: flex;
+    flex:  1 1;
+}
+
+.functions-container {
+    background-color: rgb(58, 58, 58);
+    margin: 5px 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -61,24 +76,6 @@ h2 {
 
 }
 
-#clear {
-    background-color: rgb(207, 116, 116);
-    order: 3;
-}
-
-#equals {
-    background-color: rgb(167, 149, 149);
-    order: 2;
-}
-
-.numbers-container {
-    background-color: rgb(58, 58, 58);
-    margin: 5px 10px 10px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 3;
-    gap: PX;
-}
 
 #num0, #num1, #num2, #num3, #num4, #num5, #num6, #num7, #num8, #num9 {
     background-color: aqua;
@@ -87,4 +84,19 @@ h2 {
 
 #num0 {
     order:2
+}
+
+#add, #subtract, #multiply, #divide {
+    min-width: 10%;
+    padding-top: 20px;
+}
+
+#clear {
+    background-color: rgb(207, 116, 116);
+    order: 3;
+}
+
+#equals {
+    background-color: rgb(167, 149, 149);
+    order: 2;
 }
