@@ -14,12 +14,6 @@ h1 {
 
 }
 
-h2 {
-    padding-top: 10%;
-    padding-bottom: 10%;
-    text-align: center;
-}
-
 .container {
     border: 2px black solid;
     background-color: rgb(58, 58, 58);
@@ -33,11 +27,14 @@ h2 {
 }
 
 .screen {
-   
     background-color: grey;
+    font-size:xx-large;
     min-height: 100px;
     border-radius: 10px;
-    margin: 10px 10px 5px 10px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
 }
 
@@ -63,8 +60,11 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
 }
+.button:hover {
+    background-color: aquamarine;
+}
 
-.button {
+.num-button, .op-button, .func-button {
     background-color: rgb(189, 187, 185);
     text-align: center;
     margin: 4px;
@@ -76,27 +76,26 @@ h2 {
 
 }
 
-
-#num0, #num1, #num2, #num3, #num4, #num5, #num6, #num7, #num8, #num9 {
-    background-color: aqua;
-
-}
-
 #num0 {
     order:2
 }
 
-#add, #subtract, #multiply, #divide {
+.op-button {
     min-width: 10%;
     padding-top: 20px;
 }
 
 #clear {
-    background-color: rgb(207, 116, 116);
-    order: 3;
+    background-color: rgb(145, 78, 78);
+}
+#clear:hover {
+    background-color: aqua;
 }
 
 #equals {
-    background-color: rgb(167, 149, 149);
-    order: 2;
+    background-color: grey;
+}
+
+#equals:hover {
+    background-color: aqua;
 }
