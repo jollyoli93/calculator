@@ -1,9 +1,10 @@
 const numBtn = document.querySelectorAll('.num-button');
 const opBtn = document.querySelectorAll('.op-button');
-const eqBtn = document.getElementById('equals');
+const equalsBtn = document.getElementById('equals');
 const clearBtn = document.getElementById('clear');
+const screenButtons = document.querySelector(".numbers-container");
 let currentScreenDisplay = document.getElementById('currentScreen')
-let lastScreenDisplay = document.getElementById('lastScreen')
+let previousScreenDisplay = document.getElementById('previousScreen')
 // let displayNum1 = document.getElementById('display1');
 // let displayNum2 = document.getElementById('display2');
 // let displayOp = document.getElementById('op');
@@ -24,9 +25,9 @@ const divide = function(a, b){
     return a / b;
 };
 
-let numOne = '';
-let numTwo = '';
-let operator = '';
+let numOne = 0;
+let numTwo = 0;
+let operator;
 
 
 const addToScreen = function(btnInput){
@@ -38,37 +39,42 @@ const addToScreen = function(btnInput){
 
 const clearScreen = function(){
     currentScreenDisplay.textContent = '0';
+    numOne = 0;
+    numTwo = 0;
+    operator = undefined;
 }
-
 
 const operand = function(btnInput){
-    if (currentScreenDisplay.textContent != 0 ){
-        lastScreenDisplay = currentScreenDisplay.textContent;
-        currentScreenDisplay.textContent = lastScreenDisplay + btnInput; 
-    }
-}
+    if (currentScreenDisplay.textContent === 0 && operator != undefined) return
 
-const evaluate = function(screenInput){
-
-}
+        previousScreenDisplay = currentScreenDisplay.textContent;
+        currentScreenDisplay.textContent = '';
+        operator = btnInput;
+};
 
 clearBtn.addEventListener('click', clearScreen);
 
-// equalsBtn.addEventListener('click', ()=> evaluate)
 
-numBtn.forEach((button)=>button.addEventListener('click', ()=>{
-        addToScreen(button.textContent);
-    })
-);
+equalsBtn.addEventListener('click', ()=> {
+    currentScreenDisplay.textContent = operate(previousScreenDisplay, currentScreenDisplay.textContent, operator);
+});
+
+screenButtons.addEventListener('click', (event)=>{
+    addToScreen(event.target.textContent);
+    console.log(event.target.textContent)
+
+});
 
 opBtn.forEach((button)=>button.addEventListener('click', ()=>{
-    operand(button.textContent);
-})
+        operand(button.textContent);
+        console.log(button.textContent);
+    })
 );
 
 
 const operate = function(a, b, operator){
 
+    console.log(a,b,operator)
     a = Number(a)
     b = Number(b)
     switch(operator) {
@@ -78,17 +84,16 @@ const operate = function(a, b, operator){
         case '-':
             return subtract(a,b);
             break;
-        case '*':
+        case 'x':
             return multiply(a, b);
             break;
-        case '/':
+        case '%':
             if (b === 0) return null
             else return divide(a,b);
             break;
         default:
             return null
     }
-
 };
 
 

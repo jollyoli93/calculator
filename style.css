@@ -60,7 +60,7 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
 }
-.button:hover {
+.num-button:hover, .op-button:hover {
     background-color: aquamarine;
 }
 
