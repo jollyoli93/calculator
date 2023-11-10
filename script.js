@@ -33,7 +33,7 @@ let operator;
 const addToScreen = function(btnInput){
     if (currentScreenDisplay.textContent === '0'){
         currentScreenDisplay.textContent = '';
-    };
+    } 
     currentScreenDisplay.textContent += btnInput;
 };
 
@@ -56,13 +56,15 @@ clearBtn.addEventListener('click', clearScreen);
 
 
 equalsBtn.addEventListener('click', ()=> {
-    currentScreenDisplay.textContent = operate(previousScreenDisplay, currentScreenDisplay.textContent, operator);
+    if (operator ==='%'&& currentScreenDisplay.textContent === '0'){
+        currentScreenDisplay.textContent = 'Error';
+    } else {
+        currentScreenDisplay.textContent = operate(previousScreenDisplay, currentScreenDisplay.textContent, operator)
+    };
 });
 
 screenButtons.addEventListener('click', (event)=>{
     addToScreen(event.target.textContent);
-    console.log(event.target.textContent)
-
 });
 
 opBtn.forEach((button)=>button.addEventListener('click', ()=>{
